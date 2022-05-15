@@ -1,0 +1,60 @@
+<div class="row">
+
+  <%= render 'shared/sidebar' %>
+
+  <div class="col-9" style="width: 81%;">
+    <div class="container">
+    <div class="d-flex justify-content-between">
+      <h1 class="p-1 d-flex align-items-center mt-3">Dashboard</h1>
+    </div>
+
+    <hr>
+
+    <div class="container">
+      <h4 class="mb-4">Overview</h4>
+
+      <div class="d-flex justify-content-between">
+        <div class="box d-flex justify-content-between align-items-start p-2">
+          <p class="circulo"><%= (Ticket.all.count * 100 / Ticket.all.count) %><span style="font-size: 10px;font-weight: 200;">%</span></p>
+          <div class="p-2">
+            <p class="home-total">Total tickets</p>
+            <p style="font-size: 25px;color: #0079e1;"><%= Ticket.all.count %> <span style="font-size: 10px;font-weight: 300;">Tickets</span></p>
+          </div>
+        </div>
+
+        <div class="box d-flex justify-content-between align-items-start p-2">
+          <p class="circulo0"><%= (Ticket.all.select {|x| x.status == "Abierto"}.count * 100 / Ticket.all.count) %><span style="font-size: 10px;font-weight: 200;">%</span></p>
+          <div class="p-2">
+            <p class="home-total">Tickets Abiertos</p>
+            <p style="font-size: 25px;color: #0079e1;"> <%= Ticket.all.select {|x| x.status == "Abierto"}.count %> <span style="font-size: 10px;font-weight: 300;">Tickets</span></p>
+          </div>
+        </div>
+
+        <div class="box d-flex justify-content-between align-items-start p-2">
+          <p class="circulo2"><%= (Ticket.all.select {|x| x.status == "Resuelto"}.count * 100 / Ticket.all.count) %><span style="font-size: 10px;font-weight: 200;">%</span></p>
+          <div class="p-2">
+            <p class="home-total">Tickets Resueltos</p>
+            <p style="font-size: 25px;color: #0079e1;"> <%= Ticket.all.select {|x| x.status == "Resuelto"}.count %> <span style="font-size: 10px;font-weight: 300;">Tickets</span></p>
+          </div>
+        </div>
+
+        <div class="box d-flex justify-content-between align-items-start p-2">
+          <p class="circulo3"><%= (Ticket.all.select {|x| x.status == "Necesita reembolso"}.count * 100 / Ticket.all.count) %><span style="font-size: 10px;font-weight: 200;">%</span></p>
+          <div class="p-2">
+            <p class="home-total1">Tickets Necesitan rembolso</p>
+            <p style="font-size: 25px;color: #0079e1;"> <%= Ticket.all.select {|x| x.status == "Necesita reembolso"}.count %> <span style="font-size: 10px;font-weight: 300;">Tickets</span></p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="box2">
+        <h4>Total Tickets:</h4>
+        <p class="p-3 "><%= area_chart Ticket.group_by_day(:created_at).count, colors: ["#c6e0f9", "#030a70"], curve: true  %></p>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</div>

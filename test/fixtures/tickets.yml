@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  owner: MyString
+  status: MyString
+  kepper: MyString
+
+two:
+  description: MyString
+  owner: MyString
+  status: MyString
+  kepper: MyString

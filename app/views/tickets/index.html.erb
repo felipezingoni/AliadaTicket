@@ -1,0 +1,63 @@
+<div class="row">
+
+  <%= render 'shared/sidebar' %>
+  <div class="col-9" style="width: 81%;">
+    <div class="container">
+    <div class="d-flex justify-content-between">
+      <h1 class="p-1 d-flex align-items-center mt-3">Tickets</h1>
+      <%= render 'shared/searchform' %>
+    </div>
+
+    <hr>
+
+    <table class="content-table" style="width:100%">
+    <br>
+        <thead class="" >
+            <tr>
+                <th><%= sort_link(@q, :id, "id", default_order: :desc) %></th>
+                <th>Description</th>
+                <th><%= sort_link(@q, :owner, "Owner", default_order: :desc)%></th>
+                <th><%= sort_link(@q, :status, "Status", default_order: :desc)%></th>
+                <th><%= sort_link(@q, :created_at, "Created date", default_order: :desc)%></th>
+                <th><%= sort_link(@q, :kepper, "keepers", default_order: :desc)%></th>
+                <th> </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <% @tickets.each do |ticket| %>
+            <tr >
+                <td class="id-ticket"><%= ticket.id%></td>
+                <td><p class="descrip-text"><%= ticket.description%></p></td>
+                <td class="owner-ticket"> <div class="d-flex align-items-center "><i class="fas fa-circle" style="font-size:4px;padding-right: 5px;"></i><p class="m-0" ><%= ticket.owner %></p></div></td>
+                <td>
+                    <% case ticket.status %>
+                    <% when "En progreso" %>
+                      <p class="en-progreso"><%= ticket.status %></p>
+                    <% when "Resuelto" %>
+                      <p class="resuelto"><%= ticket.status %></p>
+                    <% when "Abierto" %>
+                      <p class="abierto"><%= ticket.status %></p>
+                    <% when "Necesita reembolso" %>
+                      <p class="rembolso"><%= ticket.status %></p>
+                    <% end %>
+                </td>
+                <td class="id-ticket"><%= ticket.created_at.strftime("%F %T")%></td>
+                <td><p class="m-0"><%= ticket.keeper.name%>, <%= ticket.keeper.last_name%></p></td>
+                <td><%= link_to "More Information", ticket_path(ticket)  %></td>
+            </tr>
+            <% end %>
+        </tbody>
+
+
+
+      </table>
+      <div>
+        <%= will_paginate @tickets %>
+      </div>
+
+
+
+  </div>
+</div>

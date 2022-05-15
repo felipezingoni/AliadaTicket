@@ -1,0 +1,40 @@
+.sidebarlink {
+  color: #979797;
+  font-size: 16px;
+}
+
+// .sidebarlink:active {
+//   color: #2291ebc3;
+//   background-color: #2291eb2c;
+//   border-left: 2px solid #178be9db;
+//   border-radius:8px;
+//   height: 50px;
+//   width: 200px
+// }
+
+#navbar .menu-wraper .active {
+  color: red;
+}
+
+.sidebarlink:hover {
+  color: #2291ebc3;
+}
+
+.btn2 {
+  background-color: #008dff7a;
+  height: 151px;
+  width: 129px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid #1288e970;
+  position: relative;
+  left: 15px;
+  margin: 0 auto;
+}
+
+.cohete {
+  width: 148px;
+  margin: 0 auto;
+}

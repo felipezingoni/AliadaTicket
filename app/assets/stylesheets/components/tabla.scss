@@ -1,0 +1,115 @@
+// table {
+//   background-color: #FFFFFF;
+//   border-radius: 12px;
+//   box-shadow: rgba(186, 186, 186, 0.503) 0px 5px 15px;
+//   height: 100%;
+//   width: 100%;
+//   padding: 8px;
+// }
+
+.head-table {
+  color: #9b9b9bcf;
+  width: 100%;
+  font-weight: 300;
+  background-color: #e1e1e1;
+  border-radius: 12px !important;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: rgba(186, 186, 186, 0.503) 0px 5px 15px;
+  background-color: #FFFFFF;
+  thead tr {
+    background-color: #C6E0FA;
+    color: #0061b2b5;
+    text-align: left;
+    font-weight: bold;
+    border-radius: 12px;
+  }
+  th, td{
+    padding: 12px 15px;
+  }
+  tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+  }
+  tbody tr:last-of-type {
+    border-bottom: 2px solid #C6E0FA;
+  }
+
+}
+
+.descrip-text {
+  height: 26px;
+  width: 430px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  margin: 0;
+  font-weight: 500;
+
+}
+
+.id-ticket{
+  font-weight: 300;
+  color: gray;
+}
+
+.owner-ticket {
+  color: #7573e8c9;
+  margin: 0;
+  border-radius: 16px;
+  height: 30px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px;
+  height: 54px;
+}
+
+.abierto {
+  color: #e4c446;
+  background-color: #eddea47c;
+  border-radius: 16px;
+  text-align: center;
+  margin: 0;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.en-progreso {
+  color: #96129d;
+  background-color:#96129d5e ;
+  border-radius: 16px;
+  text-align: center;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin: 0;
+  width: 90px;
+}
+.resuelto {
+  color: #30b241ef;
+  background-color:#3fb34e69 ;
+  border-radius: 16px;
+  text-align: center;
+  margin: 0;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.rembolso {
+  color: #F9627D;
+  background-color:#f9627e41;
+  border-radius: 16px;
+  text-align: center;
+  margin: 0;
+  padding-left: 6px;
+  padding-right: 6px;
+}

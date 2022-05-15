@@ -1,0 +1,7 @@
+ <%= search_form_for @q, class:"search-bar" do |f| %>
+    <%= f.search_field :description_cont, placeholder:"Search Ticket", class:"search-input" %>
+
+    <%= button_tag type: 'submit', class: "search-buttom", id: "register-button" do %>
+     <i class="fas fa-search" style="color:#8DC4FE;"></i>
+    <% end %>
+ <% end %>

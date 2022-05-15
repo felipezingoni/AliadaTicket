@@ -1,0 +1,26 @@
+<div class="row">
+
+  <%= render 'shared/sidebar' %>
+  <div class="col-9" style="width: 81%;">
+    <div class="d-flex justify-content-between">
+      <h1 class="p-1 d-flex align-items-center mt-3">Ticket #<%= @tickets.id %></h1>
+    </div>
+    <hr>
+
+    <%= link_to "New Ticket", new_ticket_path(@tickets) %>
+
+
+    <div class="cards">
+      <h1><%= @tickets.id  %></h1>
+      <p><%= @tickets.created_at %></p>
+      <p><%= @tickets.description %></p>
+
+      <p><%= @tickets.kepper %></p>
+
+
+    </div>
+
+
+
+   </div>
+</div>

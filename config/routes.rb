@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root 'pages#index'
+  get 'mytickets', to: 'pages#mytickets'
+  get 'chat', to: 'pages#chat'
+  resources :tickets, only: [:index, :show, :new, :create] do
+    resources :keepers
+    resources :clients
+  end
+
 end
