@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#index'
   get 'mytickets', to: 'pages#mytickets'
+
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
