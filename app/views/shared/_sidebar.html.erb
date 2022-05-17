@@ -23,7 +23,7 @@
               </li>
 
               <li class="nav-item mb-5">
-                <%= link_to chatroom_path(:id), class:"nav-link text-decoration_none", 'aria-hidden' => true do %>
+                <%= link_to chatroom_path(Chatroom.ids), class:"nav-link text-decoration_none", 'aria-hidden' => true do %>
                   <div class="d-flex justify-content-start align-items-center mx-3 sidebarlink"><i class="fas fa-comment mx-3 " style="font-size: 22px;"></i><p class="m-0">Chat</p></div>
                 <% end %>
               </li>

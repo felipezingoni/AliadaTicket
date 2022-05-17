@@ -3,7 +3,6 @@ class Ticket < ApplicationRecord
   belongs_to :client
   belongs_to :user
 
+  validates :description, :keeper, :status, :client, :user, presence: true
 
-
-  validates :description, :owner, :status, :client, presence: true
 end

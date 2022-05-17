@@ -12,9 +12,9 @@
     <%= simple_form_for(@ticket) do |f| %>
       <%= f.input :description, placeholder:"Write a brief description" %>
       <%= f.input :status, collection: ['Abierto', 'En progreso', 'Resuelto', 'Necesita reembolso'] %>
-      <%= f.input :keeper, collection: Keeper.all.map {|keeper| keeper.full_name} %>
-      <%= f.input :client, collection: Client.all.map {|client| client.full_name} %>
-      <%= f.input :user, collection: User.all.map {|user| user.nickname} %>
+      <%= f.input :keeper_id, collection: Keeper.pluck(:name, :id) %>
+      <%= f.input :client_id, collection: Client.pluck(:name, :id) %>
+      <%= f.input :user_id, collection: User.pluck(:nickname, :id) %>
 
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
