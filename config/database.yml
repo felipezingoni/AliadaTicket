@@ -22,6 +22,6 @@ test:
 
 production:
   <<: *default
-  database: Aliada
+  database: Aliada_production
   username: Aliada
-  password: <%= ENV['Aliada_DATABASE_PASSWORD'] %>
+  password: <%= ENV['ALIADA_DATABASE_PASSWORD'] %>
