@@ -8,7 +8,4 @@ class PagesController < ApplicationController
 
   end
 
-  def chat
-
-  end
 end

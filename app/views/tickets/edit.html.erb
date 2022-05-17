@@ -1,20 +1,19 @@
-<div class="row">
+ <div class="row">
 
   <%= render 'shared/sidebar' %>
   <div class="col-9" style="width: 81%; position: relative;left: 279px;">
     <div class="d-flex justify-content-between">
-      <h1 class="p-1 d-flex align-items-center mt-3">New Ticket</h1>
+      <h1 class="p-1 d-flex align-items-center mt-3">Edit Ticket #<%= @ticket.id %></h1>
+
     </div>
 
     <hr>
 
-
     <%= simple_form_for(@ticket) do |f| %>
       <%= f.input :description, placeholder:"Write a brief description" %>
       <%= f.input :status, collection: ['Abierto', 'En progreso', 'Resuelto', 'Necesita reembolso'] %>
-      <%= f.input :keeper, collection: Keeper.all.map {|keeper| keeper.full_name} %>
-      <%= f.input :client, collection: Client.all.map {|client| client.full_name} %>
-      <%= f.input :user, collection: User.all.map {|user| user.nickname} %>
+      <%= f.input :keeper_id %>
+
 
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>

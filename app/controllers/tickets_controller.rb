@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
 
+
   def index
       @tickets = Ticket.all
       @q = Ticket.ransack(params[:q])
@@ -26,9 +27,22 @@ class TicketsController < ApplicationController
     end
   end
 
+  def edit
+    @ticket = Ticket.find(params[:id])
+  end
+
+  def update
+    @ticket = Ticket.find(params[:id])
+    if @ticket.update(ticket_params)
+      redirect_to ticket_path(@ticket)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def ticket_params
-    params.require(:ticket).permit(:description, :owner, :status,:kepper, :client_id, :keeper_id, :user_id)
+    params.require(:ticket).permit(:description, :status, :client_id, :keeper_id)
   end
 end
