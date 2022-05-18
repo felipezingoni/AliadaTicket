@@ -1,5 +1,4 @@
 <div class="row">
-
   <%= render 'shared/sidebar' %>
   <div class="col-9" style="width: 81%; position: relative; left: 279px;">
     <div class="container">
@@ -7,9 +6,7 @@
       <h1 class="p-1 d-flex align-items-center mt-3">Tickets</h1>
       <%= render 'shared/searchform' %>
     </div>
-
     <hr>
-
     <table class="content-table" style="width:100%">
     <br>
         <thead class="" >
@@ -23,9 +20,7 @@
                 <th> </th>
             </tr>
         </thead>
-
         <tbody>
-
             <% @tickets.each do |ticket| %>
             <tr >
                 <td class="id-ticket"><%= ticket.id%></td>
@@ -49,15 +44,9 @@
             </tr>
             <% end %>
         </tbody>
-
-
-
       </table>
       <div class="d-flex justify-content-center">
         <%= will_paginate @tickets %>
       </div>
-
-
-
   </div>
 </div>

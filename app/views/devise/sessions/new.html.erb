@@ -1,11 +1,10 @@
 <div class="row">
-  <div class="col-6 d-flex flex-column align-items-center my-5 mx-3">
+  <div class="col-6 d-flex flex-column align-items-center justify-content-center">
     <div class="">
-      <h2>Log in</h2>
+      <h2 style="font-weight: 500;font-size: 45px;">Log in</h2>
       <p>Welcome back ! Pleace enter your details</p>
-
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs" style="width: 450px;">
+        <div class="form-inputs my-3" style="width: 450px;">
           <%= f.input :email,
                       required: false,
                       autofocus: true,
@@ -15,16 +14,16 @@
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
-
         <div class="form-actions text-center my-4" style="background-color: #2290eb91;border-radius: 5px;">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "Log in", style:"color: aliceblue;" %>
         </div>
       <% end %>
-
       <%= render "devise/shared/links" %>
     </div>
   </div>
-  <div class="col-6" style="background-color: #addaff;">
-
+  <div class="col-6 log-in">
+      <div class="cartel">
+        <%= image_tag "logo-aliada.png" , style:"width: 356px;"%>
+      </div>
   </div>
 </div>

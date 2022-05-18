@@ -1,0 +1,30 @@
+.log-in {
+  background: rgb(191, 245, 255);
+  background: linear-gradient(0deg, rgba(191, 245, 255, 0.9906556372549019) 0%, rgba(82, 197, 255, 0.5676864495798319) 47%, rgba(0, 212, 255, 1) 100%);
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartel {
+  // background-color: white;
+  // border-radius: 12px;
+  text-align: center;
+  width: 565px;
+  height: 187px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  backdrop-filter: blur(5px);
+
+  background-color: rgba(255, 255, 255, 0.787);
+
+  border-radius: 32px;
+
+  box-shadow: 35px 35px 68px 0px rgba(145, 192, 255, 0.5),
+  inset -8px -8px 16px 0px rgba(145, 192, 255, 0.6),
+  inset 0px 11px 28px 0px rgb(255, 255, 255);
+
+}

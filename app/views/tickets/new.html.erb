@@ -1,23 +1,19 @@
 <div class="row">
-
   <%= render 'shared/sidebar' %>
   <div class="col-9" style="width: 81%; position: relative;left: 279px;">
     <div class="d-flex justify-content-between">
       <h1 class="p-1 d-flex align-items-center mt-3">New Ticket</h1>
     </div>
-
     <hr>
-
-
-    <%= simple_form_for(@ticket) do |f| %>
-      <%= f.input :description, placeholder:"Write a brief description" %>
-      <%= f.input :status, collection: ['Abierto', 'En progreso', 'Resuelto', 'Necesita reembolso'] %>
-      <%= f.input :keeper_id, collection: Keeper.pluck(:name, :id) %>
-      <%= f.input :client_id, collection: Client.pluck(:name, :id) %>
-      <%= f.input :user_id, collection: User.pluck(:nickname, :id) %>
-
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-
+    <div class="form-new">
+      <%= simple_form_for(@ticket) do |f| %>
+        <%= f.input :description, placeholder:"Write a brief description", :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
+        <%= f.input :status, collection: ['Abierto', 'En progreso', 'Resuelto', 'Necesita reembolso'] %>
+        <%= f.input :keeper_id, collection: Keeper.pluck(:name, :id) %>
+        <%= f.input :client_id, collection: Client.pluck(:name, :id) %>
+        <%= f.input :user_id, collection: User.pluck(:nickname, :id) %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>

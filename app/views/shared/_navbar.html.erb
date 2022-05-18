@@ -5,20 +5,15 @@
           <%= image_tag("logo-aliada.png", class:"m-4", style:"width:140px;") %>
         </div>
         <div class="col-11 d-flex align-self-center align-items-center justify-content-end" style="width: 90.666667%;position: relative;left: 247px;">
-
           <ul class="d-flex align-self-center align-content-center align-items-center m-0" >
-
             <li class="m-4 list-inline-item">
               <%= link_to "+ New ticket", new_ticket_path, class:"add_ticket" %>
             </li>
-
             <li class="m-4 list-inline-item  align-items-center rounded-circle d-flex   justify-content-center" style="width:40px; height:40px;background-color: #8EC4FE"><i class="fas fa-bell" style="color: aliceblue;"></i></li>
           </ul>
           <h1 class="rounded-1 m-3 mt-2" style="border-left: 1.9px solid #757d85;height: 47px;"></h1>
-
           <div class="dropdown">
             <button class="dropdown-toggle mr-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent;border: 0px;">
-              <%# <%= image_tag("avatar.png", class:" rounded-circle", style:"height: 60px; width: 60px; object-fit: cover; object-position: top;") %>
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", class: "avatar dropdown-toggle rounded-circle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style:"height: 60px; width: 60px; object-fit: cover; object-position: top;" %>
             </button>
             <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
@@ -28,7 +23,6 @@
             </ul>
           </div>
         </div>
-
       </div>
     </nav>
   <% else %>

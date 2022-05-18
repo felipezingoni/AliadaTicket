@@ -1,16 +1,10 @@
 <div class="row">
-
   <%= render 'shared/sidebar' %>
   <div class="col-9" style="width: 81%; position: relative;left: 279px;">
     <div class="d-flex justify-content-between">
       <h1 class="p-1 d-flex align-items-center mt-3">Ticket #<%= @ticket.id %></h1>
-
     </div>
-
     <hr>
-
-    <%# <%= @ticket.keeper.each do |keeper| %>
-
       <div class="d-flex align-items-center bg-light" style="width: 100%;">
         <%= image_tag("keeper-hi.png", class:"m-4", style:"width:300px;") %>
         <div>
@@ -29,32 +23,30 @@
           </div>
         </div>
       </div>
+      <div class="bg-light mx-4 my-5 p-4" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+        <div class="d-flex justify-content-between">
+            <h4 class="fs-3 fw-bolder">Client: <%= @ticket.client.name %> <%= @ticket.client.last_name %></h4>
+          <div class="d-flex">
+              <p class="fw-light mx-4"><%= @ticket.created_at %></p>
+              <%= link_to edit_ticket_path do  %>
+              <h5 style="color: #B3D7FF"><i class="fas fa-edit"></i></h5>
+              <% end %>
+          </div>
+        </div>
+        <p><span class="fs-5 fw-bold" style="color: #858585;"> Ticket Description: </span><br> <%= @ticket.description %></p>
+        <p><span class="fs-5 fw-bold" style="color: #858585;">Ticket Status: </span><br>
+        <% case @ticket.status %>
+                    <% when "En progreso" %>
+                      <p class="en-progreso"><%= @ticket.status %></p>
+                    <% when "Resuelto" %>
+                      <p class="resuelto"><%= @ticket.status %> <i class="fas fa-check-circle"></i></p>
+                    <% when "Abierto" %>
+                      <p class="abierto"><%= @ticket.status %></p>
+                    <% when "Necesita reembolso" %>
+                      <p class="rembolso"><%= @ticket.status %></p>
+        <% end %> </p>
 
-    <%# <% end %>
-
-    <div class="bg-light mx-4 my-5 p-4" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-      <div class="d-flex justify-content-between">
-         <%# <% @ticket.clients.each do |client| %>
-          <h4 class="fs-3 fw-bolder">Client: <%= @ticket.client.name %> <%= @ticket.client.last_name %></h4>
-         <%# <% end %>
-         <div class="d-flex">
-            <p class="fw-light mx-4"><%= @ticket.created_at %></p>
-            <%= link_to edit_ticket_path do  %>
-            <h5 style="color: #B3D7FF"><i class="fas fa-edit"></i></h5>
-            <% end %>
-         </div>
+        <p><span class="fs-5 fw-bold" style="color: #858585;">Ticket Owner: </span><br> <%= @ticket.user.nickname %></p>
       </div>
-
-      <p><span class="fs-5 fw-bold" style="color: #858585;"> Ticket Description: </span><br> <%= @ticket.description %></p>
-
-      <p><span class="fs-5 fw-bold" style="color: #858585;">Ticket Status: </span><br> <%= @ticket.status %></p>
-
-      <p><span class="fs-5 fw-bold" style="color: #858585;">Ticket Owner: </span><br> <%= @ticket.user.nickname %></p>
-    </div>
-
-
-
-
-
   </div>
 </div>
