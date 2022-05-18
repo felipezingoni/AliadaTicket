@@ -9,7 +9,7 @@
 
       <%= link_to "New Ticket", new_ticket_path(@tickets) %>
       <div style="overflow: scroll">
-      <% current_user.tickets.each do |ticket| %>
+      <% current_user.tickets.sort.reverse.each do |ticket| %>
       <div class="cards p-2 m-5">
         <div class="d-flex justify-content-between">
           <div class="d-flex align-items-center">
@@ -17,7 +17,7 @@
             <p class="titulo-ticket"> Ticket #<%= ticket.id  %></p>
           </div>
           <div class="d-flex justify-content-between align-items-center px-2">
-            <p style="padding: 20px;color: gray;"><%= ticket.created_at.strftime("%F %T") %></p>
+            <p style="padding: 20px;color: gray;"><%= ticket.created_at.strftime("%F %T")  %></p>
             <p ><i class="fas fa-ellipsis-h"></i></p>
           </div>
         </div>
